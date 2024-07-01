@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Consolas;
+}
+
+:root {
+    --dark: #442E26;
+    --mild: #7E5233;
+    --light: #B98753;
+    --rosewater: #D8A7B1;
+    --txt-light: #ffffff;
+    --txt-dark: #000000;
+}
+
+body {
+    background-color: var(--mild);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.container {
+    margin-top: 100px;
+    border: none;
+    color: var(--txt-light);
+    background: var(--dark);
+    padding: 10px;
+    min-width: 35vw;
+    min-height: 50vh;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: -5px 5px 15px 5px var(--txt-dark);
+}
+
+.header {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 0.5px solid var(--txt-light);
+    margin-bottom: 2rem;
+
+}
+
+.addTask {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.addTask input {
+    width: 25vw;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 1rem;
+}
+
+.addTask #addTaskBtn {
+    background-color: var(--light);
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--txt-light);
+    border-radius: 15px;
+}
+
+.addTask #addTaskBtn:hover {
+    background-color: var(--txt-light);
+    padding: 8px 18px;
+    color: var(--light);
+    border: 2px solid var(--mild);
+}
+
+.taskList {
+    list-style-type: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.taskList li {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--txt-light);
+    width: 95%;
+    background: var(--light);
+    border-radius: 15px;
+    padding: 5px 20px;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.taskList li:hover{
+    background: var(--mild);
+}
+.taskList li .btns{
+    display: flex;
+    gap: 10px;
+}
+.taskList li button.delBtn {
+    color: var(--txt-light);
+    background: url("delete.png") no-repeat center/contain;
+    height: 1.75rem;
+    width: 1.75rem;
+    cursor: pointer;
+    border: none;
+    justify-self: flex-end;
+}
+.taskList li button.editBtn {
+    color: var(--txt-light);
+    background: url("edit.png") no-repeat center/contain;
+    height: 1.75rem;
+    width: 1.75rem;
+    cursor: pointer;
+    border: none;
+    justify-self: flex-end;
+
+}
