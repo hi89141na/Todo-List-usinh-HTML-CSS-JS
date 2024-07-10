@@ -153,9 +153,3 @@ body {
     justify-self: flex-end;
 
 }
-.timestamp {
-    font-size: 0.75rem;
-    color: var(--txt-light);
-    display: block;
-    margin-top: 5px;
-}
