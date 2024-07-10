@@ -48,7 +48,7 @@ function createEditButton() {
 
 const updateTask = (btn) => {
     inputField.value = btn.parentNode.parentNode.textContent;
-    addBtn.textContent = "Edit";
+    addBtn.textContent = "Edit/Save";
     btn.parentNode.parentNode.remove();
     saveTasksToLocalStorage(); // Save tasks to localStorage
 };
