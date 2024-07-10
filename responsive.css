@@ -68,6 +68,10 @@
         font-size: 0.875rem;
         padding: 10px 0px;
     }
+    .addTask #addTaskBtn:hover {
+        padding: 8px 0px;
+        border: 2px solid var(--mild);
+    }
 
     .taskList {
         min-height: 280px;
