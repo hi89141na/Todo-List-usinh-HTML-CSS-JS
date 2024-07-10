@@ -1,31 +1,47 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Consolas;
+    font-family: "Lobster Two", sans-serif;
 }
 
 :root {
     --dark: #442E26;
-    --mild: #7E5233;
-    --light: #B98753;
+    --mild: #612e51;
+    --light: #a0608c;
     --rosewater: #D8A7B1;
     --txt-light: #ffffff;
     --txt-dark: #000000;
+    --bg1:#e656de;
+    --bg2:#8f2299;
+    --bg3:#79145f;
+    --bg4:#D8A7B1;
 }
 
 body {
-    background-color: var(--mild);
     display: flex;
     justify-content: center;
     align-items: flex-start;
     height: 100vh;
+    background: linear-gradient(-45deg, var(--bg1), var(--bg2), var(--bg3), var(--bg4));
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
 }
-
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 .container {
     margin-top: 100px;
     border: none;
     color: var(--txt-light);
-    background: var(--dark);
+    background: var(--rosewater);
     padding: 10px;
     width: 550px;
     min-height: 50vh;
@@ -41,6 +57,7 @@ body {
     border-bottom: 0.5px solid var(--txt-light);
     margin-bottom: 2rem;
     width: 100%;
+    color:var(--bg3)
 
 }
 
@@ -61,7 +78,7 @@ body {
 }
 
 .addTask #addTaskBtn {
-    background-color: var(--light);
+    background-color: var(--mild);
     border: none;
     font-weight: 500;
     font-size: 1rem;
@@ -95,7 +112,7 @@ body {
     font-size: 1.125rem;
     font-weight: 500;
     color: var(--txt-light);
-    background: var(--light);
+    background: var(--mild);
     border-radius: 15px;
     padding: 5px 20px;
     display: flex;
@@ -106,11 +123,11 @@ body {
     max-width: 95%;
     flex-wrap: nowrap;
     width:calc(100% - 40px);
-
-
+    
+    
 }
 .taskList li:hover{
-    background: var(--mild);
+    background: var(--light);
 }
 .taskList li .btns{
     display: flex;
