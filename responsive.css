@@ -1,0 +1,76 @@
+@media(max-width:920px) {
+    .container {
+        margin-top: 30px;
+        width: 500px;
+
+    }
+
+    .header {
+        font-size: 1.25rem;
+    }
+
+    .taskList {
+        min-height: 300px;
+        height: auto;
+
+    }
+
+}
+
+@media(max-width:640px) {
+    .container {
+        margin-top: 30px;
+        width: 450px;
+
+    }
+
+    .header {
+        font-size: 1.25rem;
+    }
+
+    .taskList {
+        min-height: 300px;
+        height: auto;
+
+    }
+}
+
+@media(max-width:540px) {
+    .container {
+        margin-top: 30px;
+        width: 400px;
+
+    }
+
+    .header {
+        font-size: 1.25rem;
+    }
+
+    .taskList {
+        min-height: 300px;
+        height: auto;
+
+    }
+}
+
+@media(max-width:480px) {
+    .container {
+        margin-top: 30px;
+        width: 350px;
+
+    }
+
+    .header {
+        font-size: 1rem;
+    }
+
+    .addTask #addTaskBtn {
+        font-size: 0.875rem;
+        padding: 10px 0px;
+    }
+
+    .taskList {
+        min-height: 280px;
+
+    }
+}

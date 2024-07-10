@@ -44,7 +44,7 @@ body {
     background: var(--rosewater);
     padding: 10px;
     width: 550px;
-    min-height: 50vh;
+    min-height: 400px;
     height: auto;
     border-radius: 15px;
     box-shadow: -5px 5px 15px 5px var(--txt-dark);
@@ -118,11 +118,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 1.5rem;
     height: auto;
     max-width: 95%;
     flex-wrap: nowrap;
     width:calc(100% - 40px);
+    word-break: break-all;
     
     
 }
