@@ -12,12 +12,31 @@ const addTask = () => {
         alert("Create Task First!!!");
     } else {
         let task = document.createElement("li");
-        task.textContent = inputField.value;
+        let taskText = document.createElement("span");
+        taskText.textContent = inputField.value;
+let timestamp=document.querySelector(".timestamp");
+if(timestamp){
+    let currentDateTime = new Date().toLocaleString();
+    timestamp.textContent = `Last Updated on: ${currentDateTime}`; 
+    task.appendChild(taskText);
+}
+else{
+    timestamp = document.createElement("span");
+    timestamp.classList.add("timestamp");
+    let currentDateTime = new Date().toLocaleString();
+    timestamp.textContent = `Last Updated on: ${currentDateTime}`;
+    task.appendChild(taskText);
+    taskList.appendChild(timestamp);
+
+}
+        
+
         let divs = document.createElement("div");
         divs.classList.add("btns");
         task.appendChild(divs);
         divs.appendChild(createEditButton());
         divs.appendChild(createDeleteButton());
+
         taskList.appendChild(task);
         inputField.value = "";
         addBtn.textContent = "Add Task";
@@ -47,7 +66,7 @@ function createEditButton() {
 }
 
 const updateTask = (btn) => {
-    inputField.value = btn.parentNode.parentNode.textContent;
+    inputField.value = btn.parentNode.parentNode.querySelector("span").textContent;
     addBtn.textContent = "Edit/Save";
     btn.parentNode.parentNode.remove();
     saveTasksToLocalStorage(); // Save tasks to localStorage
@@ -79,7 +98,9 @@ delBtns.forEach((btn) => {
 function saveTasksToLocalStorage() {
     let tasks = [];
     document.querySelectorAll(".taskList li").forEach((task) => {
-        tasks.push(task.textContent.trim());
+        let taskText = task.querySelector("span").textContent.trim();
+        let taskTimestamp = task.querySelector(".timestamp").textContent.trim();
+        tasks.push({ text: taskText, timestamp: taskTimestamp });
     });
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
@@ -87,14 +108,33 @@ function saveTasksToLocalStorage() {
 //* Function to load tasks from localStorage
 function loadTasksFromLocalStorage() {
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    tasks.forEach((taskText) => {
+    tasks.forEach((taskObj) => {
         let task = document.createElement("li");
-        task.textContent = taskText;
+
+        let taskText = document.createElement("span");
+        taskText.textContent = taskObj.text;
+        let timestamp=document.querySelector(".timestamp");
+if(timestamp){
+    let currentDateTime = new Date().toLocaleString();
+    timestamp.textContent = `Last Updated on: ${currentDateTime}`; 
+    task.appendChild(taskText);
+}
+else{
+    timestamp = document.createElement("span");
+    timestamp.classList.add("timestamp");
+    let currentDateTime = new Date().toLocaleString();
+    timestamp.textContent = `Last Updated on: ${currentDateTime}`;
+    task.appendChild(taskText);
+    taskList.appendChild(timestamp);
+
+}
+
         let divs = document.createElement("div");
         divs.classList.add("btns");
         task.appendChild(divs);
         divs.appendChild(createEditButton());
         divs.appendChild(createDeleteButton());
+
         taskList.appendChild(task);
     });
 }
